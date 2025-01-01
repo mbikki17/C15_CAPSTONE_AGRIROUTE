@@ -39,7 +39,6 @@ The system adopts a three-tier architecture consisting of:
 - **Mapping Services:** Google Maps integration for route visualization.
 - **Feedback System:** User feedback to enhance service quality.
 
----
 
 # Low-Level Design (LLD)
 
@@ -75,7 +74,7 @@ The system adopts a three-tier architecture consisting of:
   - `POST /api/feedback`: Collects user feedback.
 - **Google Maps Integration:** Renders maps and optimizes delivery routes.
 
----
+
 
 ## 2. Database Design
 
