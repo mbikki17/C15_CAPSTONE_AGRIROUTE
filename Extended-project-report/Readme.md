@@ -46,7 +46,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 ---
 
-## Ghantt chart for Extended Project PROJ3999
+## Gantt chart for Extended Project PROJ3999
 
 | Task Name                          | Start Month | Duration (Months) | Dec | Jan | Feb | Mar |
 |-------------------------------------|-------------|-------------------|-----|-----|-----|-----|
