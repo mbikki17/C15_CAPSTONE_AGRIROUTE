@@ -1,3 +1,4 @@
+
 # Extended Abstract PROJ3999 (Major Project)
 
 ## Title: **AgriRoute: Smart Vehicle Monitoring System for Farmers in Agricultural Transport with Real-Time Alerts**
@@ -51,6 +52,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 ## Ghantt chart for Extended Project PROJ3999
 
 *(Note: Include the Ghantt chart here)*
+---|---|---|
 
 
 ---
