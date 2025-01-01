@@ -12,15 +12,15 @@
 ### Mini Project (PROJ2999) Outcome:
 
 - **Proteus 8 Simulation**: Simulated the integration of GPS, GSM, and Arduino for real-time vehicle tracking, verifying the system design in a virtual environment.
-- 
+  
 - **Accurate GPS Data**: GPS module correctly parsed and displayed latitude and longitude coordinates, ensuring precise location tracking.
-- 
+  
 - **GSM Communication**: The system successfully transmitted GPS data in a GSM-compatible format, simulating real-world data communication.
-- 
+  
 - **Arduino Coordination**: Arduino micro-controller effectively coordinated the GPS and GSM modules, managing the data flow and ensuring smooth operation.
-- 
+  
 - **Real-Time Data Display**: The virtual terminal accurately displayed real-time coordinates, confirming the system’s ability to track vehicle movement.
-- 
+  
 - **Future Potential**: The simulation results pave the way for developing a functional hardware prototype, mobile application, and field testing to refine the system.
 
 ---
@@ -40,8 +40,11 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 ## Extended Project Objectives
 
 - **Address inefficiencies** in agricultural transportation by reducing delays, minimizing the waste of perishable goods, and streamlining logistics operations.
+  
 - **Create a cost-effective Vehicle Tracking System (VTS)** using Arduino, GPS, and GSM modules to promote widespread adoption among farmers with limited technical skills.
+  
 - **Design the system to be scalable**, allowing for the integration of additional sensors like temperature, humidity, or load monitoring to meet various agricultural needs and maintain optimal conditions for transported goods.
+  
 - **Develop an easy-to-use mobile app** that offers real-time location tracking, delivery notifications, and transaction history, facilitating smooth communication and coordination among farmers, transporters, and buyers.
 
 ---
@@ -55,6 +58,8 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 ## IEEE Conference Targets
 
 - **6th IEEE 5th IEEE India Council International Subsections (IEEE INDISCON 2025)**
+  
+- 
 
 ---
 
