@@ -52,6 +52,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 *(Note: Include the Ghantt chart here)*
 
+
 ---
 
 ## IEEE Conference Targets
