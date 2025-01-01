@@ -52,17 +52,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 ## Ghantt Chart for Extended Project PROJ3999
 
-| Task Name                   | Start Date | End Date   | Duration | Status        |
-|-----------------------------|------------|------------|----------|---------------|
-| **Project Planning**         | 01-Jan-2025 | 07-Jan-2025 | 7 days   | In Progress   |
-| **Research & Data Collection**| 08-Jan-2025 | 21-Jan-2025 | 14 days  | Not Started   |
-| **System Design**            | 22-Jan-2025 | 05-Feb-2025 | 15 days  | Not Started   |
-| **Prototype Development**    | 06-Feb-2025 | 20-Feb-2025 | 15 days  | Not Started   |
-| **Testing & Debugging**      | 21-Feb-2025 | 05-Mar-2025 | 14 days  | Not Started   |
-| **App Development**          | 06-Mar-2025 | 20-Mar-2025 | 15 days  | Not Started   |
-| **Final Integration**        | 21-Mar-2025 | 30-Mar-2025 | 10 days  | Not Started   |
-| **Documentation**            | 01-Apr-2025 | 07-Apr-2025 | 7 days   | Not Started   |
-| **Final Presentation**       | 08-Apr-2025 | 10-Apr-2025 | 3 days   | Not Started   |
+
 
 
 ---
