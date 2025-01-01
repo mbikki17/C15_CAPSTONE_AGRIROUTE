@@ -97,7 +97,7 @@ The system adopts a three-tier architecture consisting of:
 - **One-to-Many:** Between Vehicles and Tracking Data.
 - **One-to-Many:** Between Users and Feedback.
 
----
+
 
 ## 3. Scalability & Performance
 - **Load Balancing:** Distributes requests among multiple backend servers.
