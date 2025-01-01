@@ -12,7 +12,9 @@
    - Promote transparency by providing real-time updates on vehicle movement, environmental conditions, and product safety to all stakeholders.  
 
 5. **Environmental Monitoring**  
-   - Incorporate sensors (e.g., DHT11 for temperature and humidity) to ensure optimal conditions for transporting perishable goods, triggering alerts for deviations.  
+   - Incorporate sensors (e.g., DHT11 for temperature and humidity) to ensure optimal conditions for transporting perishable goods, triggering alerts for deviations.
+
+---
 
 # Low-Level Requirements (LLR)
 1. **Arduino Integration**  
@@ -32,7 +34,9 @@
    - Equip the vehicle with a 16x2 LCD display to show live data such as coordinates, temperature, humidity, and load weight for operators.  
 
 6. **Mobile App Integration**  
-   - Ensure compatibility with Google Maps API for intuitive location tracking and route visualization.  
+   - Ensure compatibility with Google Maps API for intuitive location tracking and route visualization.
+
+---
 
 # Non-Functional Requirements (NFR)
 1. **Energy Efficiency**  
