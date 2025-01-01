@@ -50,7 +50,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 | Task Name                          | Start Month | Duration (Months) | Dec | Jan | Feb | Mar |
 |-------------------------------------|-------------|-------------------|-----|-----|-----|-----|
-| **Sourcing Components**             | Dec-2024    | 1 month           | ███ |     |     |     |
+| **Sourcing Components**             | Jan-2025    | 2 months          |     | ███ | ███ |     |
 | **Project Planning**                | Dec-2024    | 1 month           | ███ |     |     |     |
 | **Research & Design**               | Jan-2025    | 1 month           |     | ███ |     |     |
 | **GPS and GSM Integration**         | Jan-2025    | 1 month           |     | ███ |     |     |
