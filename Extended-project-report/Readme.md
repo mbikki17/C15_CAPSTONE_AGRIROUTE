@@ -48,19 +48,19 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 ## Gantt Chart for Extended Project PROJ3999 (Months)
 
-| Task Name                          | Start Month | Duration (Months) | Dec | Jan | Feb | Mar |
-|-------------------------------------|-------------|-------------------|-----|-----|-----|-----|
-| **Sourcing Components**             | Jan-2025    | 2 months          |     | ███ | ███ |     |
-| **Project Planning**                | Dec-2024    | 1 month           | ███ |     |     |     |
-| **Research & Design**               | Jan-2025    | 1 month           |     | ███ |     |     |
-| **Writing IEEE Paper**              | Jan-2025    | 3 months          |     | ███ | ███ | ███ |
-| **GPS and GSM Integration**         | Feb-2025    | 1 month           |     |     | ███ |     |
-| **Arduino and Sensor Integration**  | Feb-2025    | 1 month           |     |     | ███ |     |
-| **Mobile App Development**          | Feb-2025    | 1 month           |     |     | ███ |     |
-| **Testing and Debugging**           | Feb-2025    | 1 month           |     |     | ███ |     |
-| **System Integration & Final Testing**| Feb-2025   | 2 months          |     |     | ███ | ███ |
-| **IEEE Paper Submission**           | Mar-2025    | 1 month           |     |     |     | ███ |
-| **Documentation & Reporting**      | Dec-2024    | 4 months          | ███ | ███ | ███ | ███ |
+| Task Name                          | Dec | Jan | Feb | Mar |
+|-------------------------------------|-----|-----|-----|-----|
+| **Project Planning**                | ███ |     |     |     |
+| **Sourcing Components**             |     | ███ | ███ |     |
+| **Research & Design**               |     | ███ |     |     |
+| **Working on Research Paper**       |     | ███ | ███ | ███ |
+| **GPS and GSM Integration**         |     |     | ███ |     |
+| **Arduino and Sensor Integration**  |     |     | ███ |     |
+| **Mobile App Development**          |     |     | ███ |     |
+| **Testing and Debugging**           |     |     | ███ |     |
+| **IEEE Paper Submission**           |     |     |     | ███ |
+| **System Integration & Final Testing**|     |     | ███ | ███ |
+| **Documentation & Reporting**      | ███ | ███ | ███ | ███ |
 
 ---
 
