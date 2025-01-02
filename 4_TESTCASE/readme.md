@@ -1,4 +1,4 @@
-# Test Case Summary for GPS and GSM Vehicle Tracking System from phase-1
+# Test Case Summary for GPS and GSM Vehicle Tracking System from Phase-1
 
 The test cases for the GPS and GSM Vehicle Tracking System in Proteus 8 focus on validating core functionalities like GPS data acquisition and SMS transmission. The tests ensure that the system:
 
