@@ -51,15 +51,15 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 | Task Name                          | Dec | Jan | Feb | Mar |
 |-------------------------------------|-----|-----|-----|-----|
 | **Project Planning**                | ███ |     |     |     |
-| **Sourcing Components**             |     | ███ | ███ |     |
 | **Research & Design**               |     | ███ |     |     |
-| **Working on Research Paper**       |     | ███ | ███ | ███ |
+| **Sourcing Components**             |     | ███ | ███ |     |
 | **GPS and GSM Integration**         |     |     | ███ |     |
 | **Arduino and Sensor Integration**  |     |     | ███ |     |
 | **Mobile App Development**          |     |     | ███ |     |
 | **Testing and Debugging**           |     |     | ███ |     |
-| **IEEE Paper Submission**           |     |     |     | ███ |
 | **System Integration & Final Testing**|     |     | ███ | ███ |
+| **Working on Research Paper**       |     | ███ | ███ | ███ |
+| **Research Paper Submission**       |     |     |     | ███ |
 | **Documentation & Reporting**      | ███ | ███ | ███ | ███ |
 
 ---
