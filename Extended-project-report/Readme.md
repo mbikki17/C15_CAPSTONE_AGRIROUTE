@@ -48,19 +48,19 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 ## Gantt Chart for Extended Project PROJ3999
 
-| Task Name                          | Dec | Jan | Feb | Mar |
-|-------------------------------------|-----|-----|-----|-----|
-| **Project Planning**                | ███ |     |     |     |
-| **Research & Design**               |     | ███ |     |     |
-| **Sourcing Components**             |     | ███ | ███ |     |
-| **GPS and GSM Integration**         |     |     | ███ |     |
-| **Arduino and Sensor Integration**  |     |     | ███ |     |
-| **Mobile App Development**          |     |     | ███ |     |
-| **Testing and Debugging**           |     |     | ███ |     |
-| **System Integration & Final Testing**|     |     | ███ | ███ |
-| **Working on Research Paper**       |     | ███ | ███ | ███ |
-| **Research Paper Submission**       |     |     |     | ███ |
-| **Documentation & Reporting**      | ███ | ███ | ███ | ███ |
+| Task Name                          | Dec  | Jan  | Feb  | Mar  |
+|-------------------------------------|------|------|------|------|
+| **Project Planning**                |  ✔️  |      |      |      |
+| **Research & Design**               |      |  ✔️  |      |      |
+| **Sourcing Components**             |      |  ✔️  |  ✔️  |      |
+| **GPS and GSM Integration**         |      |      |  ✔️  |      |
+| **Arduino and Sensor Integration**  |      |      |  ✔️  |      |
+| **Mobile App Development**          |      |      |  ✔️  |      |
+| **Testing and Debugging**           |      |      |  ✔️  |      |
+| **System Integration & Final Testing**|      |      |  ✔️  |  ✔️  |
+| **Working on Research Paper**       |      |  ✔️  |  ✔️  |  ✔️  |
+| **Research Paper Submission**       |      |      |      |  ✔️  |
+| **Documentation & Reporting**      |  ✔️  |  ✔️  |  ✔️  |  ✔️  |
 
 ---
 
