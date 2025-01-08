@@ -68,7 +68,7 @@ This new, low-cost solution improves supply chain efficiency by reducing delays 
 
 - **6th IEEE 5th IEEE India Council International Subsections (IEEE INDISCON 2025)**
   
-- 
+- **International Conference on Robotics, Communication Technology, Electronics, and Electrical Engineering (ICRRCTEEE)**
 
 ---
 
