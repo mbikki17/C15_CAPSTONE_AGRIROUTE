@@ -1,4 +1,4 @@
-## Title: **AgriRoute: Smart Vehicle Monitoring System for Farmers in Agricultural Transport with Real-Time Alerts**
+## Title: **AgriRoute - Smart Vehicle Monitoring System for Farmers in Agricultural Transport with Real-Time Alerts**
 
 **Project Supervisor**: Dr. Sunita Panda
 
