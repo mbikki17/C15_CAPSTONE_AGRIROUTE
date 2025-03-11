@@ -34,7 +34,6 @@ The system follows a three-tier architecture:
 ##### Server Infrastructure
 - **Web Server:** Handles data requests and user management.
 - **Database:** Stores user details, tracking history, and vehicle data.
-- **APIs:** RESTful endpoints for seamless communication between the mobile app and backend.
 
 ### 2. Main Features
 - **Real-time Vehicle Tracking:** Updates vehicle movements at regular intervals.
@@ -68,14 +67,6 @@ The system follows a three-tier architecture:
   - **Authentication:** Secure login using email/password or OAuth.
 
 #### Server Infrastructure
-- **Technologies:** Node.js/Django for backend logic.
-- **Data Handling:**  
-  - Parses and stores SMS-based location updates.
-  - Uses MongoDB for flexible, high-speed data storage.
-- **API Endpoints:**  
-  - `POST /api/track` → Stores new location updates.
-  - `GET /api/vehicles/:id` → Retrieves vehicle tracking history.
-  - `POST /api/feedback` → Collects user feedback.
 - **Google Maps Integration:**  
   - Renders interactive maps.
   - Optimizes vehicle routes for better delivery efficiency.
@@ -86,9 +77,5 @@ The system follows a three-tier architecture:
 - **One-to-Many:** Vehicles → Tracking Data.
 - **One-to-Many:** Users → Feedback.
 
-### 3. Scalability & Performance Considerations
-- **Load Balancing:** Distributes network requests across multiple backend servers.
-- **Data Caching:** Uses Redis to store frequently accessed data, improving response times.
-- **Rate Limiting:** Prevents abuse by restricting excessive API requests.
 
 
