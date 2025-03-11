@@ -1,37 +1,42 @@
-// Include Libraries
-#ifndef HARDWARE_CONFIG_H
-#define HARDWARE_CONFIG_H
+// inc.h - Header file for GPS-GSM Tracking System
 
-#include "Arduino.h"
-#include "DHT.h"
-#include "LiquidCrystal.h"
-#include "HX711.h"
+#ifndef INC_H
+#define INC_H
+
+#include <LiquidCrystal.h>
+#include <SoftwareSerial.h>
 
 // Pin Definitions
-#define DHT_PIN_DATA  4
-#define GPS_PIN_TX  11
-#define GPS_PIN_RX  10
-#define LCD_PIN_RS  12
-#define LCD_PIN_E 9
-#define LCD_PIN_DB4 5
-#define LCD_PIN_DB5 6
-#define LCD_PIN_DB6 7
-#define LCD_PIN_DB7 8
-#define SCALE_PIN_DAT A3
-#define SCALE_PIN_CLK 13
-#define SIM800L_SOFTWARESERIAL_PIN_TX 2
-#define SIM800L_SOFTWARESERIAL_PIN_RX 3
-// Object initialization
-extern DHT dht;
+#define buzzer 11
+#define Swi 10
+#define TRUE 1
+#define FALSE 0
+
+// Global Variables
+extern char rec;
+extern char arr_gps[200];
+extern uint8_t valid_data_gps_flag, start_gps_reading, gps_count, arr_count_gps;
+extern char time[30], gps_valid, latitude[20], lat_ns, longitude[20], lon_ew;
+extern float lat1, lon1, tem1, tem2, tem3;
+extern unsigned long panicMillis, outofrangeMillis, connectionMillis;
+extern int read_flag, connection_flag;
+extern char aux_string[25], phone_number[20], SMS[400];
+extern float volt_value;
+extern unsigned long previousMillis, previousMillis1;
+
+// LCD & Serial Communication
 extern LiquidCrystal lcd;
-extern HX711 scale;
+extern SoftwareSerial GSerial;
 
-// Calibration factor for scale
-#define CALIBRATION_FACTOR 2280 
+// Function Prototypes
+int8_t sendATcommand2(char* ATcommand, char* expected_answer1, char* expected_answer2, unsigned int timeout);
+void send_message(char *message);
+void send_msg_location(char *message);
+void init_gsm();
+void process_gps_data(char *arr);
+void read_gps2();
+void read_gps_location();
+void disp_gps_lcd();
+void receive_gsm_message();
 
-// Function prototypes
-char menu();
-
-#endif // HARDWARE_CONFIG_H
-
-
+#endif
