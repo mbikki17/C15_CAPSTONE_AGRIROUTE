@@ -1,87 +1,146 @@
-#include "hardware_config.h"
+// source.h - Function Definitions for GPS-GSM Tracking System
+#include "inc.h"
 
-// Define global objects
-DHT dht(DHT_PIN_DATA);
-LiquidCrystal lcd(LCD_PIN_RS, LCD_PIN_E, LCD_PIN_DB4, LCD_PIN_DB5, LCD_PIN_DB6, LCD_PIN_DB7);
-HX711 scale(SCALE_PIN_DAT, SCALE_PIN_CLK);
+LiquidCrystal lcd(4, 5, 6, 7, 8, 9);
+SoftwareSerial GSerial(2, 3); // RX, TX for GSM Module
 
-// Define variables for testing menu
-const int timeout = 10000; // Timeout of 10 sec
-char menuOption = 0;
-long time0;
+char rec = ' ';
+char arr_gps[200] = "";
+uint8_t valid_data_gps_flag = 0, start_gps_reading = 0, gps_count = 0, arr_count_gps = 0;
+char time[30], gps_valid, latitude[20], lat_ns, longitude[20], lon_ew;
+float lat1, lon1, tem1, tem2, tem3;
+unsigned long panicMillis = 0, outofrangeMillis = 0, connectionMillis = 0;
+int read_flag = 0, connection_flag = 1;
+char aux_string[25], phone_number[20] = "phoneno", SMS[400];
+float volt_value;
+unsigned long previousMillis = 5000, previousMillis1;
 
-void setup() 
-{
-    Serial.begin(9600);
-    while (!Serial);
-    Serial.println("Start");
+// Send AT command to GSM module and wait for a response
+int8_t sendATcommand2(char* ATcommand, char* expected_answer1, char* expected_answer2, unsigned int timeout) {
+    uint8_t x = 0, answer = 0;
+    char response[300];
+    unsigned long previous;
 
-    dht.begin();
-    lcd.begin(16, 2);
-    scale.set_scale(CALIBRATION_FACTOR); 
-    scale.tare();
+    memset(response, '\0', 100);
+    delay(100);
+    while (GSerial.available() > 0) GSerial.read();
 
-    menuOption = menu();
+    GSerial.println(ATcommand);
+    previous = millis();
+
+    do {
+        if (GSerial.available() != 0) {
+            response[x++] = GSerial.read();
+            if (strstr(response, expected_answer1) != NULL) answer = 1;
+            else if (strstr(response, expected_answer2) != NULL) answer = 2;
+        }
+    } while ((answer == 0) && ((millis() - previous) < timeout));
+
+    return answer;
 }
 
-void loop() 
-{
-    if (menuOption == '1') 
-    {
-        float dhtHumidity = dht.readHumidity();
-        float dhtTempC = dht.readTempC();
-        Serial.print(F("Humidity: ")); Serial.print(dhtHumidity); Serial.print(F(" [%]\t"));
-        Serial.print(F("Temp: ")); Serial.print(dhtTempC); Serial.println(F(" [C]"));
-    }
-    else if (menuOption == '3') 
-    {
-        lcd.setCursor(0, 0);
-        lcd.print("Circuito Rocks !");
-        lcd.noDisplay();
-        delay(500);
-        lcd.display();
-        delay(500);
-    }
-    else if (menuOption == '4') 
-    {
-        float scaleUnits = scale.get_units();
-        Serial.print(scaleUnits);
-        Serial.println(" Kg");
-    }
-
-    if (millis() - time0 > timeout) 
-    {
-        menuOption = menu();
+// Send SMS
+void send_message(char *message) {
+    char aux_string[25];
+    uint8_t answer;
+    Serial.print(F("GSM : Sending SMS ..."));
+    sprintf(aux_string, "AT+CMGS=\"%s\"", phone_number);
+    answer = sendATcommand2(aux_string, ">", ">", 3000);
+    if (answer == 1) {
+        GSerial.println(message);
+        GSerial.write(0x1A);
+        if (sendATcommand2("", "OK", "OK", 20000) == 1) Serial.println(F("Sent"));
+        else Serial.println(F("X....Error"));
+    } else {
+        Serial.print(F("X...error "));
+        Serial.println(answer, DEC);
     }
 }
 
-char menu() 
-{
-    Serial.println(F("\nWhich component would you like to test?"));
-    Serial.println(F("(1) DHT22/11 Humidity and Temperature Sensor"));
-    Serial.println(F("(3) LCD 16x2"));
-    Serial.println(F("(4) SparkFun HX711 - Load Cell Amplifier"));
-    Serial.println(F("(menu) send anything else or press on-board reset button\n"));
-    
-    while (!Serial.available());
-    while (Serial.available()) 
-    {
-        char c = Serial.read();
-        if (isAlphaNumeric(c)) 
-        {   
-            if (c == '1') 
-                Serial.println(F("Now Testing DHT22/11 Humidity and Temperature Sensor"));
-            else if (c == '3') 
-                Serial.println(F("Now Testing LCD 16x2"));
-            else if (c == '4') 
-                Serial.println(F("Now Testing SparkFun HX711 - Load Cell Amplifier"));
-else 
-            {
-                Serial.println(F("Illegal input!"));
-                return 0;
-            }
-            time0 = millis();
-            return c;
-        }
-    }
+// Send GPS Location via SMS
+void send_msg_location(char *message) {
+    char aux_string[50];
+    uint8_t answer;
+    Serial.print(F("GSM : Sending SMS ..."));
+    sprintf(aux_string, "AT+CMGS=\"%s\"", phone_number);
+    answer = sendATcommand2(aux_string, ">", ">", 3000);
+    if (answer == 1) {
+        GSerial.print(message);
+        GSerial.print("http://maps.google.com/maps?q=+");
+        GSerial.print(lat1, 5);
+        GSerial.print(",+");
+        GSerial.print(lon1, 5);
+        GSerial.write(0x1A);
+    }
 }
+
+// Initialize GSM module
+void init_gsm() {
+    uint8_t answer, gsm_detect_count = 0;
+    lcd.clear();
+    lcd.print("GSM init...");
+    delay(2000);
+    GSerial.begin(9600);
+
+    while ((sendATcommand2("AT", "OK", "OK", 2000) != 1) && (gsm_detect_count < 3)) {
+        gsm_detect_count++;
+        Serial.println(F("GSM : Not Detected"));
+        delay(5000);
+    }
+
+    if (gsm_detect_count >= 3) {
+        Serial.println(F("GSM : Finally Not Detected"));
+        lcd.print("X");
+        lcd.setCursor(0, 1);
+        lcd.print("System Hang");
+        while (1) {
+            digitalWrite(buzzer, HIGH);
+            delay(100);
+            digitalWrite(buzzer, LOW);
+            delay(100);
+        }
+    } else {
+        lcd.print("OK");
+        Serial.println(F("GSM : Detected, Initializing"));
+        sendATcommand2("AT+CMGF=1", "OK", "OK", 1000);
+        sendATcommand2("AT+IPR=9600", "OK", "OK", 1000);
+    }
+    delay(2000);
+    lcd.clear();
+}
+
+// Process GPS Data
+void process_gps_data(char *arr) {
+    uint8_t i = 0;
+    while (*arr != ',') time[i++] = *arr++;
+    time[i] = '\0';
+    gps_valid = *(++arr);
+    arr++;
+    while (*arr != ',') latitude[i++] = *arr++;
+    latitude[i] = '\0';
+}
+
+// Read GPS Location
+void read_gps_location() {
+    lcd.clear();
+    start_gps_reading = 1;
+    valid_data_gps_flag = FALSE;
+    while (valid_data_gps_flag != TRUE) read_gps2();
+    lat1 = atof(latitude);
+    lon1 = atof(longitude);
+    disp_gps_lcd();
+    delay(1000);
+}
+
+// Display GPS on LCD
+void disp_gps_lcd() {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("LAT:");
+    lcd.print(lat1, 4);
+    lcd.setCursor(0, 1);
+    lcd.print("LON:");
+    lcd.print(lon1, 4);
+    delay(2000);
+}
+
