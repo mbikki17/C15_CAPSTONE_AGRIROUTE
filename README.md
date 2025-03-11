@@ -52,7 +52,7 @@ Prevent overloading with the **HX711 load cell**, ensuring that the goods being 
 
 - **Cost-effective**: Perfect for farmers, transporters, and consumers looking to improve supply chain efficiency at an affordable cost. 💵
 - **Easy to use**: Minimal setup and real-time monitoring for everyone involved. 🛠️
-- **Reliable**: Even during power outages, VTS will keep on working with a 12V DC backup. 🔋
+- **Reliable**: Even during power outages, VTS will keep on working with a power backup. 🔋
 
 ---
 
