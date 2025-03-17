@@ -1,4 +1,5 @@
 # High-Level Requirements (HLR)
+
 1. **Real-Time Vehicle Tracking**  
    - The system must track vehicle locations in real-time using the NEO-6M GPS module, ensuring location accuracy within 2.5 meters.  
 
@@ -11,12 +12,10 @@
 4. **Supply Chain Transparency**  
    - Promote transparency by providing real-time updates on vehicle movement, environmental conditions, and product safety to all stakeholders.  
 
-5. **Environmental Monitoring**  
-   - Incorporate sensors (e.g., DHT11 for temperature and humidity) to ensure optimal conditions for transporting perishable goods, triggering alerts for deviations.
-
 ---
 
 # Low-Level Requirements (LLR)
+
 1. **Arduino Integration**  
    - Utilize Arduino Uno R3 to manage data flow and coordination between GPS, GSM, DHT11, HX711 load cell, and other modules.  
 
@@ -39,6 +38,7 @@
 ---
 
 # Non-Functional Requirements (NFR)
+
 1. **Energy Efficiency**  
    - Optimize the system to minimize battery consumption, ensuring uninterrupted operation during extended transit durations.  
 
