@@ -40,12 +40,6 @@ With **GPS technology**, track vehicle locations in real-time with an accuracy o
 ### 📲 **GSM Alerts**  
 The **GSM module** sends notifications for location updates, and environmental changes, and triggers alerts when conditions go outside of safe limits. 📞
 
-### 🌡️ **Environmental Monitoring**  
-The **DHT11 sensor** continuously monitors temperature and humidity during transport. Get alerts if conditions deviate from safe ranges! 🌡️
-
-### ⚖️ **Load Monitoring**  
-Prevent overloading with the **HX711 load cell**, ensuring that the goods being transported are within safe weight limits. ⚖️
-
 ---
 
 ## 🌱 **Why VTS?**
